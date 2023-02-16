@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   
 
     @user = User.find(params[:id])
-    @post_image = @user.post_images
+    @post_images = @user.post_images
   end
 
   def edit
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(user.id)
+    redirect_to user_path(@user.id)
   end
 
 private
