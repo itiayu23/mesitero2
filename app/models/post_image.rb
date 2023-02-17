@@ -4,6 +4,10 @@ class PostImage < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+# shop_nameが存在しているか確認バリテ
+validates :shop_name, presence: true
+# imageが存在しているかのバリテ
+validates :image, presence: true
 
   def get_image
     unless image.attached?
